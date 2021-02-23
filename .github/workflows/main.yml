@@ -42,7 +42,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: build
         # The GITHUB_TOKEN option is the access token used to authorize the action to manipulate your repository.
         # Any secrets other than the one above must be referenced using the bracket syntax below 
         # and stored in the GitHub repository's Settings/Secrets menu.
