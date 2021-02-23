@@ -33,6 +33,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install and Build 🔧
+        with:
+          env:
+            REACT_APP_WHATEVER: whateveeeeeer
+            REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
         run: |
           npm install
           npm run build
@@ -46,5 +50,3 @@ jobs:
         # The GITHUB_TOKEN option is the access token used to authorize the action to manipulate your repository.
         # Any secrets other than the one above must be referenced using the bracket syntax below 
         # and stored in the GitHub repository's Settings/Secrets menu.
-        env:
-          REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
