@@ -1,3 +1,6 @@
+# This is a workflow to auto-deploy you React app with secrets
+# https://github.com/marketplace/actions/deploy-to-github-pages
+
 name: Deploy & Build React App
 
 # Controls when the action will run. 
@@ -30,11 +33,16 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          npm run-script build
+          npm run build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env: # Or as an environment variable
+          REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
+        # The GITHUB_TOKEN option is the access token used to authorize the action to manipulate your repository.
+        # Any secrets other than the one above must be referenced using the bracket syntax below 
+        # and stored in the GitHub repository's Settings/Secrets menu.
           BRANCH: gh-pages
           FOLDER: dist
