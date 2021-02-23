@@ -13,6 +13,13 @@ on:
     branches:
       - main
 
+env:
+  # Any secret you want to appear in your app must be referenced using the bracket syntax below 
+  # and stored in the GitHub repository's Settings/Secrets menu:
+  # https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow
+  REACT_APP_WHATEVER: whateveeeeeer
+  REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
+  
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -36,13 +43,6 @@ jobs:
         run: |
           npm install
           npm run build
-        with:
-          env:
-            # Any secret you want to appear in your app must be referenced using the bracket syntax below 
-            # and stored in the GitHub repository's Settings/Secrets menu:
-            # https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow
-            REACT_APP_WHATEVER: whateveeeeeer
-            REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
