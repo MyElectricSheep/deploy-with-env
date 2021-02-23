@@ -17,9 +17,9 @@ env:
   # Any secret you want to appear in your app must be referenced using the bracket syntax below 
   # and stored in the GitHub repository's Settings/Secrets menu:
   # https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow
-  REACT_APP_WHATEVER: whateveeeeeer
   REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
-  
+  REACT_APP_ANOTHER_KEY_ADDED_THRU_GITHUB: ${{ secrets.REACT_APP_ANOTHER_KEY_ADDED_THRU_GITHUB }}
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
