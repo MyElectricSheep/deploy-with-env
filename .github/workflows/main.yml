@@ -41,10 +41,10 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        env: # Or as an environment variable
-          REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
+          BRANCH: gh-pages
+          FOLDER: dist
         # The GITHUB_TOKEN option is the access token used to authorize the action to manipulate your repository.
         # Any secrets other than the one above must be referenced using the bracket syntax below 
         # and stored in the GitHub repository's Settings/Secrets menu.
-          BRANCH: gh-pages
-          FOLDER: dist
+        env:
+          REACT_APP_KEY_ADDED_GITHUB: ${{ secrets.REACT_APP_KEY_ADDED_GITHUB }}
